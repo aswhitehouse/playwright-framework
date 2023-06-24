@@ -16,4 +16,4 @@ jobs:
       - name: Build and run Docker container
         run: |
           docker build -t playwright-script .
-          docker run --rm -it playwright-script 2>&1
+          docker run --rm playwright-script 2>&1
