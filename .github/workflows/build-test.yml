@@ -17,3 +17,10 @@ jobs:
         run: |
           docker build -t playwright-script .
           docker run --rm playwright-script 2>&1
+
+      - name: Send Slack message
+        run: |
+          curl -d "text=Build and test job completed: ${{ job.status }}" \
+          -d "channel=C05DMJUHJCX" \
+          -H "Authorization: Bearer ${{ secrets.SLACK_TOKEN }}" \
+          -X POST https://slack.com/api/chat.postMessage
