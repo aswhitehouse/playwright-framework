@@ -20,7 +20,7 @@ jobs:
 
       - name: Send Slack message
         run: |
-          curl -d "text=Build and test job completed: ${{ job.status }}" \
+          curl -d "text=Build and test job completed for Build completed for repository: ${{ env.GITHUB_REPOSITORY }} : ${{ job.status }}" \
           -d "channel=C05DMJUHJCX" \
           -H "Authorization: Bearer ${{ secrets.SLACK_TOKEN }}" \
           -X POST https://slack.com/api/chat.postMessage
