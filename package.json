@@ -1,0 +1,14 @@
+{
+  "name": "playwrightframework",
+  "version": "1.0.0",
+  "description": "playwrightfw",
+  "main": "index.js",
+  "scripts": {
+    "start": "node init-test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.35.1"
+  }
+}
