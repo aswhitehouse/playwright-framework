@@ -7,8 +7,12 @@ class BaseTest {
     this.page = await this.context.newPage();
   }
 
-  async teardown() {
+  async teardown(testInfo) {
     await this.browser.close();
+    const testName = testInfo.title;
+    const testStatus = 'pass';
+    console.log(`Test Name: ${testName}`);
+    console.log(`Test Status: ${testStatus}`);
     console.log("Browser closed");
   }
 }
